@@ -16,8 +16,12 @@ const conn = require("./server/models/db.js");
 conn();
 
 //Routes
+//Get the user routes
 const userRoute = require("./server/routes/userRoutes.js");
 app.use("/", userRoute);
+//Get the quiz routes
+const quizRoute = require("./server/routes/quizRoutes.js");
+app.use("/", quizRoute);
 
 app.get("/", (req, res) => {
   res.send("<h1>This is start point</h1>");
