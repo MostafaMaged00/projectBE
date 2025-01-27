@@ -22,6 +22,9 @@ app.use("/", userRoute);
 //Get the quiz routes
 const quizRoute = require("./server/routes/quizRoutes.js");
 app.use("/", quizRoute);
+//Get the book routes
+const bookRoute = require("./server/routes/bookRoutes.js");
+app.use("/", bookRoute);
 
 app.get("/", (req, res) => {
   res.send("<h1>This is start point</h1>");
