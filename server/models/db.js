@@ -5,7 +5,7 @@ const conn = async () => {
   try {
     //connect to the database
     mongoose.connect(process.env.MONGO_URI); //get the connection string from env file using process.env
-    mongoose.connection.once("open", () => {git s
+    mongoose.connection.once("open", () => {
       console.log("Connected successfully to Database");
     });
   } catch (error) {
