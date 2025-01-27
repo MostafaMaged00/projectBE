@@ -12,6 +12,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //Routes
+const userRoute = require("./server/routes/userRoutes.js");
+app.use("/", userRoute);
+
 app.get("/", (req, res) => {
   res.send("This is start point");
 });
