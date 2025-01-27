@@ -11,12 +11,16 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+//Connect to the database
+const conn = require("./server/models/db.js");
+conn();
+
 //Routes
 const userRoute = require("./server/routes/userRoutes.js");
 app.use("/", userRoute);
 
 app.get("/", (req, res) => {
-  res.send("This is start point");
+  res.send("<h1>This is start point</h1>");
 });
 //Start the server
 app.listen(port, () => {
