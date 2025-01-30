@@ -3,10 +3,7 @@ const { Schema } = mongoose;
 
 // Define the Book schema
 const bookSchema = new Schema({
-  id: {
-    type: Number,
-    required: true, // Book Id is required
-  },
+
   title: {
     type: String,
     required: true, // Title is mandatory
