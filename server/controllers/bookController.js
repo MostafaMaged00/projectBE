@@ -3,13 +3,13 @@ const Book = require("../models/Book");
 //Create
 // Function to add a new book
 const addBook = async (req, res) => {
-  const { title, author, publishedDate, genre, pages } = req.body;
+  const { id, title, author, publishedDate, genre, pages } = req.body;
 
   try {
     const book = new Book({
+      id,
       title,
       author,
-      publishedDate,
       genre,
       pages,
     });
@@ -41,6 +41,7 @@ const getAllBooks = async (req, res) => {
     res.status(500).json({ message: "Server error, please try again." });
   }
 };
+
 //Update
 // Function to get a book by its ID
 const getBookById = async (req, res) => {
@@ -59,6 +60,8 @@ const getBookById = async (req, res) => {
     res.status(500).json({ message: "Server error, please try again." });
   }
 };
+
+
 
 //Update
 //Function to update a book by its ID

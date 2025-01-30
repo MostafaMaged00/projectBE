@@ -3,6 +3,10 @@ const { Schema } = mongoose;
 
 // Define the Book schema
 const bookSchema = new Schema({
+  id: {
+    type: Number,
+    required: true, // Book Id is required
+  },
   title: {
     type: String,
     required: true, // Title is mandatory
@@ -11,10 +15,6 @@ const bookSchema = new Schema({
     type: String,
     required: true, // Author is mandatory
   },
-  publishedDate: {
-    type: Date,
-    required: true, // Published Date is mandatory
-  },
   genre: {
     type: String,
     required: true, // Genre is mandatory
@@ -22,10 +22,6 @@ const bookSchema = new Schema({
   pages: {
     type: Number,
     required: true, // Pages count is mandatory
-  },
-  dateCreated: {
-    type: Date,
-    default: Date.now, // Automatically set the date when the document is created
   },
 });
 

@@ -34,7 +34,7 @@ app.use("/", bookRoute);
 
 //404 error page
 app.use(function (req, res, next) {
-  res.render("404");
+ res.render("404");
 });
 
 app.get("/", (req, res) => {
