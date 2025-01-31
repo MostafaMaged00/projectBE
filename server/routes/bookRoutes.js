@@ -5,7 +5,7 @@ const bookController = require("../controllers/bookController");
 
 //C-R-U-D
 //Create
-router.post("/api/book", bookController.addBook);
+router.post("/api/book/addbook", bookController.addBook);
 
 //Read
 router.get("/api/book", bookController.getAllBooks);
