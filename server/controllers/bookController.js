@@ -3,7 +3,7 @@ const Book = require("../models/Book");
 //Create
 // Function to add a new book
 const addBook = async (req, res) => {
-  const { title, author, publishedDate, genre, pages } = req.body;
+  const { title, author, publishedDate, genre, pages, image } = req.body;
 
   try {
     const book = new Book({
@@ -11,6 +11,7 @@ const addBook = async (req, res) => {
       author,
       genre,
       pages,
+      image,
     });
     await book.save();
 
@@ -64,13 +65,13 @@ const getBookById = async (req, res) => {
 //Function to update a book by its ID
 const updateBook = async (req, res) => {
   const { id } = req.params; // Get the book ID from the URL params
-  const { title, author, publishedDate, genre, pages } = req.body; // Get the updated data
+  const { title, author, publishedDate, genre, pages, image } = req.body; // Get the updated data
 
   try {
     // Find the book by ID and update it
     const book = await Book.findByIdAndUpdate(
       id,
-      { title, author, publishedDate, genre, pages }, // Fields to update
+      { title, author, publishedDate, genre, pages, image }, // Fields to update
       { new: true } // Option to return the updated document
     );
 

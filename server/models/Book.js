@@ -3,7 +3,6 @@ const { Schema } = mongoose;
 
 // Define the Book schema
 const bookSchema = new Schema({
-
   title: {
     type: String,
     required: true, // Title is mandatory
@@ -19,6 +18,9 @@ const bookSchema = new Schema({
   pages: {
     type: Number,
     required: true, // Pages count is mandatory
+  },
+  image: {
+    type: String,
   },
 });
 
